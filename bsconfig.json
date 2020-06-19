@@ -1,13 +1,6 @@
 {
   "name": "reason-hasura-blog",
   "reason": { "react-jsx": 3 },
-  "bsc-flags": ["-bs-super-errors"],
-  "sources": [
-    {
-      "dir": "src",
-      "subdirs": true
-    }
-  ],
   "package-specs": [
     {
       "module": "es6",
@@ -16,13 +9,34 @@
   ],
   "suffix": ".bs.js",
   "namespace": true,
+  "sources": {
+    "dir": "src",
+    "subdirs": true,
+    "generators": [
+      {
+        "name": "gen-tailwind",
+        "edge": ["tailwind.css", ":", "index.css"]
+      }
+    ]
+  },
+  "generators": [
+    {
+      "name": "gen-tailwind",
+      "command": "tailwindcss build $in -o $out"
+    }
+  ],
+  "bsc-flags": ["-bs-super-errors", "-bs-no-version-header"],
   "ppx-flags": [
-    "@baransu/graphql_ppx_re/ppx"
+    "@baransu/graphql_ppx_re/ppx",
+    ["@dylanirlbeck/tailwind-ppx/tailwind-ppx", "-path src/tailwind.css"]
   ],
   "bs-dependencies": [
     "reason-react",
     "reason-apollo",
     "reason-apollo-hooks"
   ],
-  "refmt": 3
+  "refmt": 3,
+  "warnings": {
+    "error": "+8"
+  }
 }

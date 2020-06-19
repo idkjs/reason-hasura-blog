@@ -1,5 +1,5 @@
 %raw
-"import './index.css'";
+"import './tailwind.css'";
 %raw
 "import 'animate.css'";
 

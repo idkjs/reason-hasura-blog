@@ -1150,6 +1150,11 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
+"@dylanirlbeck/tailwind-ppx@^0.7.8":
+  version "0.7.8"
+  resolved "https://registry.yarnpkg.com/@dylanirlbeck/tailwind-ppx/-/tailwind-ppx-0.7.8.tgz#7cb40ff98433800c53785f71ef0eb0282fc4a616"
+  integrity sha512-vQWHfCJhMGzQHaVT1onfA+jr//LU4GIEdLXG3gXiL/kZNQiccSw6X5u135mIQGXS/ZiJWbdw+v/CMMlWO5wTAw==
+
 "@fullhuman/postcss-purgecss@^2.1.2":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-2.3.0.tgz#50a954757ec78696615d3e118e3fee2d9291882e"
