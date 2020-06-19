@@ -1,6 +1,6 @@
 ####{BSB GENERATED: NO EDIT
 B lib/bs
-FLG -open ReasonHasuraDemo
+FLG -open ReasonHasuraBlog
 FLG -ppx /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@baransu/graphql_ppx_re/ppx
 FLG -ppx '/Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/bs-platform/darwin/bsc.exe -as-ppx -bs-jsx 3'
 S /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/bs-platform/lib/ocaml

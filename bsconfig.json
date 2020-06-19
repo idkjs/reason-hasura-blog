@@ -1,5 +1,5 @@
 {
-  "name": "reason-hasura-demo",
+  "name": "reason-hasura-blog",
   "reason": { "react-jsx": 3 },
   "bsc-flags": ["-bs-super-errors"],
   "sources": [

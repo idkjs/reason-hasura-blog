@@ -8,8 +8,8 @@ import * as Js_json from "bs-platform/lib/es6/js_json.js";
 import * as Js_option from "bs-platform/lib/es6/js_option.js";
 import * as ApolloHooks from "reason-apollo-hooks/src/ApolloHooks.bs.js";
 import * as Caml_option from "bs-platform/lib/es6/caml_option.js";
-import * as Post$ReasonHasuraDemo from "./Post.bs.js";
-import * as Utils$ReasonHasuraDemo from "../utils/utils.bs.js";
+import * as Post$ReasonHasuraBlog from "./Post.bs.js";
+import * as Utils$ReasonHasuraBlog from "../utils/Utils.bs.js";
 
 var ppx_printed_query = "subscription getPosts  {\nposts(order_by: {created_at: desc})  {\ntitle  \ncover_img  \ncontent  \ncreated_at  \nuser  {\nname  \navatar_url  \n}\n\n}\n\n}\n";
 
@@ -154,7 +154,7 @@ var PostsSubscription = {
 function postsSubscription(param) {
   var match = ApolloHooks.useSubscription(Caml_option.some(null), undefined, undefined, definition);
   var __x = match[0];
-  return Utils$ReasonHasuraDemo.map(__x, (function (x) {
+  return Utils$ReasonHasuraBlog.map(__x, (function (x) {
                 return x.posts;
               }));
 }
@@ -163,18 +163,18 @@ function PostsList(Props) {
   var posts = postsSubscription(undefined);
   var tmp;
   if (typeof posts === "number") {
-    tmp = posts === /* Loading */0 ? Utils$ReasonHasuraDemo.ste("Loading") : React.createElement("div", {
+    tmp = posts === /* Loading */0 ? Utils$ReasonHasuraBlog.ste("Loading") : React.createElement("div", {
             className: "bg-white rounded-t-lg overflow-hidden p-4 p-10 flex justify-center"
-          }, Utils$ReasonHasuraDemo.ste("There are no posts"));
+          }, Utils$ReasonHasuraBlog.ste("There are no posts"));
   } else if (posts.TAG) {
     console.log(posts._0);
-    tmp = Utils$ReasonHasuraDemo.ste("Error");
+    tmp = Utils$ReasonHasuraBlog.ste("Error");
   } else {
     tmp = $$Array.mapi((function (idx, post) {
             return React.createElement("div", {
                         key: String(idx),
                         className: "bg-white rounded-t-lg overflow-hidden p-4 p-10 flex justify-center"
-                      }, React.createElement(Post$ReasonHasuraDemo.make, {
+                      }, React.createElement(Post$ReasonHasuraBlog.make, {
                             post: post
                           }));
           }), posts._0);

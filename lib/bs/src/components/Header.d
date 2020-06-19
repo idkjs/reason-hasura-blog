@@ -1,1 +1,1 @@
-src/components/Header-ReasonHasuraDemo.cmj : ReasonHasuraDemo.cmi
+src/components/Header-ReasonHasuraBlog.cmj : ReasonHasuraBlog.cmi

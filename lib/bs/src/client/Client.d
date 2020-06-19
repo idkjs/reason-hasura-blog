@@ -1,1 +1,1 @@
-src/client/Client-ReasonHasuraDemo.cmj : ReasonHasuraDemo.cmi
+src/client/Client-ReasonHasuraBlog.cmj : ReasonHasuraBlog.cmi

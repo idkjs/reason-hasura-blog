@@ -1,1 +1,1 @@
-src/components/AddPostForm-ReasonHasuraDemo.cmj : ReasonHasuraDemo.cmi
+src/components/AddPostForm-ReasonHasuraBlog.cmj : ReasonHasuraBlog.cmi

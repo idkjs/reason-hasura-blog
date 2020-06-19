@@ -1,1 +1,1 @@
-src/Index-ReasonHasuraDemo.cmj : ReasonHasuraDemo.cmi src/App-ReasonHasuraDemo.cmj src/App-ReasonHasuraDemo.cmi src/client/Client-ReasonHasuraDemo.cmj src/client/Client-ReasonHasuraDemo.cmi
+src/Index-ReasonHasuraBlog.cmj : ReasonHasuraBlog.cmi src/App-ReasonHasuraBlog.cmj src/App-ReasonHasuraBlog.cmi src/client/Client-ReasonHasuraBlog.cmj src/client/Client-ReasonHasuraBlog.cmi

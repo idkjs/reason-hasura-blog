@@ -4,8 +4,8 @@ import * as React from "react";
 import * as ReactDOMRe from "reason-react/src/legacy/ReactDOMRe.bs.js";
 import * as ReactApollo from "react-apollo";
 import * as ReactHooks from "@apollo/react-hooks";
-import * as App$ReasonHasuraDemo from "./App.bs.js";
-import * as Client$ReasonHasuraDemo from "./client/Client.bs.js";
+import * as App$ReasonHasuraBlog from "./App.bs.js";
+import * as Client$ReasonHasuraBlog from "./client/Client.bs.js";
 
 import './index.css'
 ;
@@ -14,10 +14,10 @@ import 'animate.css'
 ;
 
 ReactDOMRe.renderToElementWithId(React.createElement(ReactApollo.ApolloProvider, {
-          client: Client$ReasonHasuraDemo.instance,
+          client: Client$ReasonHasuraBlog.instance,
           children: React.createElement(ReactHooks.ApolloProvider, {
-                client: Client$ReasonHasuraDemo.instance,
-                children: React.createElement(App$ReasonHasuraDemo.make, {})
+                client: Client$ReasonHasuraBlog.instance,
+                children: React.createElement(App$ReasonHasuraBlog.make, {})
               })
         }), "root");
 
