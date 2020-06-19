@@ -8,13 +8,13 @@ ppx_flags = -ppx /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules
 g_dpkg_incls = 
 g_ns = -bs-ns ReasonHasuraDemo
 bsb_dir_group = 0
-g_lib_incls = -I . -I src/components -I src -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-react/lib/ocaml -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo/lib/ocaml -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@glennsl/bs-json/lib/ocaml
+g_lib_incls = -I . -I src/utils -I src/components -I src -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-react/lib/ocaml -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo/lib/ocaml -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo-hooks/lib/ocaml
 rule build_ast_from_re
   command = $bsc  $warnings -color always -bs-jsx 3 $ppx_flags $bsc_flags -o $out -bs-syntax-only -bs-binary-ast $in
   description = [34mBuilding[39m [2m${out}[22m
 build  src/App.reast : build_ast_from_re $src_root_dir/src/App.re
 rule build_deps
-  command = $bsdep -hash 76fd30b365f3bf0a2f639e15f43ef517 $g_ns -g $bsb_dir_group $in
+  command = $bsdep -hash 57d7ef0cb7580f8255caa19bd4810736 $g_ns -g $bsb_dir_group $in
   restat = 1
   description = [34mBuilding[39m [2m${out}[22m
 build  src/App.d : build_deps src/App.reast
@@ -23,48 +23,48 @@ rule ml_cmj_cmi
   dyndep = $in_e.d
   restat = 1
   description = [34mBuilding[39m [2m${out}[22m
-build  src/App-ReasonHasuraDemo.cmj |  src/App-ReasonHasuraDemo.cmi $src_root_dir/src/App.bs.js $src_root_dir/lib/js/src/App.bs.js : ml_cmj_cmi src/App.reast ||  src/App.d
-  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src -bs-package-output es6:src
+build  src/App-ReasonHasuraDemo.cmj |  src/App-ReasonHasuraDemo.cmi $src_root_dir/src/App.bs.js : ml_cmj_cmi src/App.reast ||  src/App.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src
 build  src/Index.reast : build_ast_from_re $src_root_dir/src/Index.re
 build  src/Index.d : build_deps src/Index.reast
-build  src/Index-ReasonHasuraDemo.cmj |  src/Index-ReasonHasuraDemo.cmi $src_root_dir/src/Index.bs.js $src_root_dir/lib/js/src/Index.bs.js : ml_cmj_cmi src/Index.reast ||  src/Index.d
-  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src -bs-package-output es6:src
-build  src/utils.reast : build_ast_from_re $src_root_dir/src/utils.re
-build  src/utils.d : build_deps src/utils.reast
-build  src/utils-ReasonHasuraDemo.cmj |  src/utils-ReasonHasuraDemo.cmi $src_root_dir/src/utils.bs.js $src_root_dir/lib/js/src/utils.bs.js : ml_cmj_cmi src/utils.reast ||  src/utils.d
-  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src -bs-package-output es6:src
+build  src/Index-ReasonHasuraDemo.cmj |  src/Index-ReasonHasuraDemo.cmi $src_root_dir/src/Index.bs.js : ml_cmj_cmi src/Index.reast ||  src/Index.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src
 build  src/Client.reast : build_ast_from_re $src_root_dir/src/Client.re
 build  src/Client.d : build_deps src/Client.reast
-build  src/Client-ReasonHasuraDemo.cmj |  src/Client-ReasonHasuraDemo.cmi $src_root_dir/src/Client.bs.js $src_root_dir/lib/js/src/Client.bs.js : ml_cmj_cmi src/Client.reast ||  src/Client.d
-  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src -bs-package-output es6:src
+build  src/Client-ReasonHasuraDemo.cmj |  src/Client-ReasonHasuraDemo.cmi $src_root_dir/src/Client.bs.js : ml_cmj_cmi src/Client.reast ||  src/Client.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src
 build  src/components/Post.reast : build_ast_from_re $src_root_dir/src/components/Post.re
 build  src/components/Post.d : build_deps src/components/Post.reast
-build  src/components/Post-ReasonHasuraDemo.cmj |  src/components/Post-ReasonHasuraDemo.cmi $src_root_dir/src/components/Post.bs.js $src_root_dir/lib/js/src/components/Post.bs.js : ml_cmj_cmi src/components/Post.reast ||  src/components/Post.d
-  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src/components -bs-package-output es6:src/components
+build  src/components/Post-ReasonHasuraDemo.cmj |  src/components/Post-ReasonHasuraDemo.cmi $src_root_dir/src/components/Post.bs.js : ml_cmj_cmi src/components/Post.reast ||  src/components/Post.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src/components
 build  src/components/Modal.reast : build_ast_from_re $src_root_dir/src/components/Modal.re
 build  src/components/Modal.d : build_deps src/components/Modal.reast
-build  src/components/Modal-ReasonHasuraDemo.cmj |  src/components/Modal-ReasonHasuraDemo.cmi $src_root_dir/src/components/Modal.bs.js $src_root_dir/lib/js/src/components/Modal.bs.js : ml_cmj_cmi src/components/Modal.reast ||  src/components/Modal.d
-  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src/components -bs-package-output es6:src/components
+build  src/components/Modal-ReasonHasuraDemo.cmj |  src/components/Modal-ReasonHasuraDemo.cmi $src_root_dir/src/components/Modal.bs.js : ml_cmj_cmi src/components/Modal.reast ||  src/components/Modal.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src/components
 build  src/components/Header.reast : build_ast_from_re $src_root_dir/src/components/Header.re
 build  src/components/Header.d : build_deps src/components/Header.reast
-build  src/components/Header-ReasonHasuraDemo.cmj |  src/components/Header-ReasonHasuraDemo.cmi $src_root_dir/src/components/Header.bs.js $src_root_dir/lib/js/src/components/Header.bs.js : ml_cmj_cmi src/components/Header.reast ||  src/components/Header.d
-  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src/components -bs-package-output es6:src/components
-build  src/components/Counter.reast : build_ast_from_re $src_root_dir/src/components/Counter.re
-build  src/components/Counter.d : build_deps src/components/Counter.reast
-build  src/components/Counter-ReasonHasuraDemo.cmj |  src/components/Counter-ReasonHasuraDemo.cmi $src_root_dir/src/components/Counter.bs.js $src_root_dir/lib/js/src/components/Counter.bs.js : ml_cmj_cmi src/components/Counter.reast ||  src/components/Counter.d
-  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src/components -bs-package-output es6:src/components
+build  src/components/Header-ReasonHasuraDemo.cmj |  src/components/Header-ReasonHasuraDemo.cmi $src_root_dir/src/components/Header.bs.js : ml_cmj_cmi src/components/Header.reast ||  src/components/Header.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src/components
 build  src/components/PostTypes.reast : build_ast_from_re $src_root_dir/src/components/PostTypes.re
 build  src/components/PostTypes.d : build_deps src/components/PostTypes.reast
-build  src/components/PostTypes-ReasonHasuraDemo.cmj |  src/components/PostTypes-ReasonHasuraDemo.cmi $src_root_dir/src/components/PostTypes.bs.js $src_root_dir/lib/js/src/components/PostTypes.bs.js : ml_cmj_cmi src/components/PostTypes.reast ||  src/components/PostTypes.d
-  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src/components -bs-package-output es6:src/components
+build  src/components/PostTypes-ReasonHasuraDemo.cmj |  src/components/PostTypes-ReasonHasuraDemo.cmi $src_root_dir/src/components/PostTypes.bs.js : ml_cmj_cmi src/components/PostTypes.reast ||  src/components/PostTypes.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src/components
 build  src/components/PostsList.reast : build_ast_from_re $src_root_dir/src/components/PostsList.re
 build  src/components/PostsList.d : build_deps src/components/PostsList.reast
-build  src/components/PostsList-ReasonHasuraDemo.cmj |  src/components/PostsList-ReasonHasuraDemo.cmi $src_root_dir/src/components/PostsList.bs.js $src_root_dir/lib/js/src/components/PostsList.bs.js : ml_cmj_cmi src/components/PostsList.reast ||  src/components/PostsList.d
-  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src/components -bs-package-output es6:src/components
+build  src/components/PostsList-ReasonHasuraDemo.cmj |  src/components/PostsList-ReasonHasuraDemo.cmi $src_root_dir/src/components/PostsList.bs.js : ml_cmj_cmi src/components/PostsList.reast ||  src/components/PostsList.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src/components
 build  src/components/AddPostForm.reast : build_ast_from_re $src_root_dir/src/components/AddPostForm.re
 build  src/components/AddPostForm.d : build_deps src/components/AddPostForm.reast
-build  src/components/AddPostForm-ReasonHasuraDemo.cmj |  src/components/AddPostForm-ReasonHasuraDemo.cmi $src_root_dir/src/components/AddPostForm.bs.js $src_root_dir/lib/js/src/components/AddPostForm.bs.js : ml_cmj_cmi src/components/AddPostForm.reast ||  src/components/AddPostForm.d
-  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src/components -bs-package-output es6:src/components
+build  src/components/AddPostForm-ReasonHasuraDemo.cmj |  src/components/AddPostForm-ReasonHasuraDemo.cmi $src_root_dir/src/components/AddPostForm.bs.js : ml_cmj_cmi src/components/AddPostForm.reast ||  src/components/AddPostForm.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src/components
+build  src/utils/Subs.reast : build_ast_from_re $src_root_dir/src/utils/Subs.re
+build  src/utils/Subs.d : build_deps src/utils/Subs.reast
+build  src/utils/Subs-ReasonHasuraDemo.cmj |  src/utils/Subs-ReasonHasuraDemo.cmi $src_root_dir/src/utils/Subs.bs.js : ml_cmj_cmi src/utils/Subs.reast ||  src/utils/Subs.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src/utils
+build  src/utils/Utils.reast : build_ast_from_re $src_root_dir/src/utils/Utils.re
+build  src/utils/Utils.d : build_deps src/utils/Utils.reast
+build  src/utils/Utils-ReasonHasuraDemo.cmj |  src/utils/Utils-ReasonHasuraDemo.cmi $src_root_dir/src/utils/Utils.bs.js : ml_cmj_cmi src/utils/Utils.reast ||  src/utils/Utils.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src/utils
 rule build_package
   command = $bsc -w -49 -color always -no-alias-deps  $in
   restat = 1

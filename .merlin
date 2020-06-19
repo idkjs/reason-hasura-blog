@@ -10,10 +10,12 @@ S /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-react/l
 B /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-react/lib/ocaml
 S /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo/lib/ocaml
 B /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo/lib/ocaml
-S /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@glennsl/bs-json/lib/ocaml
-B /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@glennsl/bs-json/lib/ocaml
+S /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo-hooks/lib/ocaml
+B /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo-hooks/lib/ocaml
 S src
 B lib/bs/src
 S src/components
 B lib/bs/src/components
+S src/utils
+B lib/bs/src/utils
 ####BSB GENERATED: NO EDIT}

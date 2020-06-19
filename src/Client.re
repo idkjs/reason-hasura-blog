@@ -1,10 +1,7 @@
 let inMemoryCache = ApolloInMemoryCache.createInMemoryCache();
 
 let httpLink =
-  ApolloLinks.createHttpLink(
-    ~uri="http://localhost:8080/v1/graphql",
-    (),
-  );
+  ApolloLinks.createHttpLink(~uri="http://localhost:8080/v1/graphql", ());
 
 /* WebSocket client */
 let webSocketLink =

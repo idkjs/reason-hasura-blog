@@ -23,6 +23,5 @@ let make = () => {
     {state.isModalOpened
        ? <Modal closeModal={_ => dispatch(Close)} /> : ReasonReact.null}
     <PostsList />
-    <Counter />
   </div>;
 };

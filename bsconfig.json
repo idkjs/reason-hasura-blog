@@ -12,19 +12,17 @@
     {
       "module": "es6",
       "in-source": true
-    },
-    {
-      "module": "commonjs",
-      "in-source": false
     }
   ],
   "suffix": ".bs.js",
   "namespace": true,
+  "ppx-flags": [
+    "@baransu/graphql_ppx_re/ppx"
+  ],
   "bs-dependencies": [
     "reason-react",
     "reason-apollo",
-    "@glennsl/bs-json"
+    "reason-apollo-hooks"
   ],
-  "ppx-flags": ["@baransu/graphql_ppx_re/ppx"],
   "refmt": 3
 }

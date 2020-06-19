@@ -1,8 +1,10 @@
+// https://github.com/bandprotocol/bandchain/blob/master/scan/src/subscriptions/AccountSub.re
+
 open PostTypes;
 open Utils;
-module PostsQuery = [%graphql
+module PostsSubscription = [%graphql
   {|
-     query getPosts {
+     subscription getPosts {
       posts(order_by: {created_at: desc }) @bsRecord{
         title
         cover_img
@@ -17,32 +19,41 @@ module PostsQuery = [%graphql
   |}
 ];
 
-module GetPostsSubscription = ReasonApollo.CreateSubscription(PostsQuery);
+let getPosts = _ => {
+  let (result, _) =
+    ApolloHooks.useSubscription(
+      PostsSubscription.definition,
+      ~variables=PostsSubscription.makeVariables(),
+    );
+  result |> Subs.map(_, x => x##posts);
+};
 
 [@react.component]
 let make = () => {
+  let postsSubscription = getPosts();
   <div className="flex flex-wrap">
-    <GetPostsSubscription>
-      ...{({result}) =>
-        switch (result) {
-        | Loading => "Loading" |> ste
-        | Error(error) =>
-          Js.log(error);
-          "Error" |> ste;
-        | Data(response) =>
-          switch (response##posts) {
-          | posts =>
-            posts
-            |> Array.map(post =>
-                 <div
-                   className="bg-white rounded-t-lg overflow-hidden p-4 p-10 flex justify-center">
-                   <Post post />
-                 </div>
-               )
-            |> ReasonReact.array
-          }
-        }
-      }
-    </GetPostsSubscription>
+    {switch (postsSubscription) {
+     | Loading => "Loading" |> ste
+     | Error(error) =>
+       Js.log(error);
+       "Error" |> ste;
+     | NoData =>
+       <div
+         className="bg-white rounded-t-lg overflow-hidden p-4 p-10 flex justify-center">
+         "There are no posts"->Utils.ste
+       </div>
+     | Data(response) =>
+       switch (response) {
+       | posts =>
+         posts
+         |> Array.map(post =>
+              <div
+                className="bg-white rounded-t-lg overflow-hidden p-4 p-10 flex justify-center">
+                <Post post />
+              </div>
+            )
+         |> ReasonReact.array
+       }
+     }}
   </div>;
 };
