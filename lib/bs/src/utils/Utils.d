@@ -1,1 +1,1 @@
-src/utils/Utils-ReasonHasuraDemo.cmj : ReasonHasuraDemo.cmi
+src/utils/utils-ReasonHasuraDemo.cmj : ReasonHasuraDemo.cmi

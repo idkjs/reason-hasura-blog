@@ -44,20 +44,18 @@ let make = () => {
        </div>
      | Data(response) =>
      
-       switch (response) {
+       {switch (response) {
        | posts =>
          posts
          |> Array.mapi((idx, post) =>
-         <div className="flex flex-wrap">
               <div
                 key={string_of_int(idx)}
                 className="bg-white rounded-t-lg overflow-hidden p-4 p-10 flex justify-center">
                 <Post post />
               </div>
-              </div>
             )
          |> ReasonReact.array
-       }
+       }}
      }}
   </div>;
 };

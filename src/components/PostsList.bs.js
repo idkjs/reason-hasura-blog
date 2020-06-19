@@ -9,7 +9,7 @@ import * as Js_option from "bs-platform/lib/es6/js_option.js";
 import * as ApolloHooks from "reason-apollo-hooks/src/ApolloHooks.bs.js";
 import * as Caml_option from "bs-platform/lib/es6/caml_option.js";
 import * as Post$ReasonHasuraDemo from "./Post.bs.js";
-import * as Utils$ReasonHasuraDemo from "../utils/Utils.bs.js";
+import * as Utils$ReasonHasuraDemo from "../utils/utils.bs.js";
 
 var ppx_printed_query = "subscription getPosts  {\nposts(order_by: {created_at: desc})  {\ntitle  \ncover_img  \ncontent  \ncreated_at  \nuser  {\nname  \navatar_url  \n}\n\n}\n\n}\n";
 
@@ -172,13 +172,11 @@ function PostsList(Props) {
   } else {
     tmp = $$Array.mapi((function (idx, post) {
             return React.createElement("div", {
-                        className: "flex flex-wrap"
-                      }, React.createElement("div", {
-                            key: String(idx),
-                            className: "bg-white rounded-t-lg overflow-hidden p-4 p-10 flex justify-center"
-                          }, React.createElement(Post$ReasonHasuraDemo.make, {
-                                post: post
-                              })));
+                        key: String(idx),
+                        className: "bg-white rounded-t-lg overflow-hidden p-4 p-10 flex justify-center"
+                      }, React.createElement(Post$ReasonHasuraDemo.make, {
+                            post: post
+                          }));
           }), posts._0);
   }
   return React.createElement("div", undefined, tmp);
