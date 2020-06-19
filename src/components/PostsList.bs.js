@@ -9,7 +9,6 @@ import * as Js_option from "bs-platform/lib/es6/js_option.js";
 import * as ApolloHooks from "reason-apollo-hooks/src/ApolloHooks.bs.js";
 import * as Caml_option from "bs-platform/lib/es6/caml_option.js";
 import * as Post$ReasonHasuraDemo from "./Post.bs.js";
-import * as Subs$ReasonHasuraDemo from "../client/Subs.bs.js";
 import * as Utils$ReasonHasuraDemo from "../utils/Utils.bs.js";
 
 var ppx_printed_query = "subscription getPosts  {\nposts(order_by: {created_at: desc})  {\ntitle  \ncover_img  \ncontent  \ncreated_at  \nuser  {\nname  \navatar_url  \n}\n\n}\n\n}\n";
@@ -152,44 +151,44 @@ var PostsSubscription = {
   MT_Ret: MT_Ret
 };
 
-function getPosts(param) {
+function postsSubscription(param) {
   var match = ApolloHooks.useSubscription(Caml_option.some(null), undefined, undefined, definition);
   var __x = match[0];
-  return Subs$ReasonHasuraDemo.map(__x, (function (x) {
+  return Utils$ReasonHasuraDemo.map(__x, (function (x) {
                 return x.posts;
               }));
 }
 
 function PostsList(Props) {
-  var postsSubscription = getPosts(undefined);
+  var posts = postsSubscription(undefined);
   var tmp;
-  if (typeof postsSubscription === "number") {
-    tmp = postsSubscription === /* Loading */0 ? Utils$ReasonHasuraDemo.ste("Loading") : React.createElement("div", {
+  if (typeof posts === "number") {
+    tmp = posts === /* Loading */0 ? Utils$ReasonHasuraDemo.ste("Loading") : React.createElement("div", {
             className: "bg-white rounded-t-lg overflow-hidden p-4 p-10 flex justify-center"
           }, Utils$ReasonHasuraDemo.ste("There are no posts"));
-  } else if (postsSubscription.TAG) {
-    console.log(postsSubscription._0);
+  } else if (posts.TAG) {
+    console.log(posts._0);
     tmp = Utils$ReasonHasuraDemo.ste("Error");
   } else {
     tmp = $$Array.mapi((function (idx, post) {
             return React.createElement("div", {
-                        key: String(idx),
-                        className: "bg-white rounded-t-lg overflow-hidden p-4 p-10 flex justify-center"
-                      }, React.createElement(Post$ReasonHasuraDemo.make, {
-                            post: post
-                          }));
-          }), postsSubscription._0);
+                        className: "flex flex-wrap"
+                      }, React.createElement("div", {
+                            key: String(idx),
+                            className: "bg-white rounded-t-lg overflow-hidden p-4 p-10 flex justify-center"
+                          }, React.createElement(Post$ReasonHasuraDemo.make, {
+                                post: post
+                              })));
+          }), posts._0);
   }
-  return React.createElement("div", {
-              className: "flex flex-wrap"
-            }, tmp);
+  return React.createElement("div", undefined, tmp);
 }
 
 var make$1 = PostsList;
 
 export {
   PostsSubscription ,
-  getPosts ,
+  postsSubscription ,
   make$1 as make,
   
 }

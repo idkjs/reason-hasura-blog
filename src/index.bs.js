@@ -13,9 +13,6 @@ import './index.css'
 import 'animate.css'
 ;
 
-import './styles.css'
-;
-
 ReactDOMRe.renderToElementWithId(React.createElement(ReactApollo.ApolloProvider, {
           client: Client$ReasonHasuraDemo.instance,
           children: React.createElement(ReactHooks.ApolloProvider, {

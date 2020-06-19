@@ -2,10 +2,6 @@
 "import './index.css'";
 %raw
 "import 'animate.css'";
-%raw
-"import './styles.css'";
-
-// [%bs.raw {|require('./styles.css')|}];
 
 ReactDOMRe.renderToElementWithId(
   <ReasonApollo.Provider client=Client.instance>

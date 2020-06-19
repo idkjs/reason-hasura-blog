@@ -19,20 +19,20 @@ module PostsSubscription = [%graphql
   |}
 ];
 
-let getPosts = _ => {
+let postsSubscription = _ => {
   let (result, _) =
     ApolloHooks.useSubscription(
       PostsSubscription.definition,
       ~variables=PostsSubscription.makeVariables(),
     );
-  result |> Subs.map(_, x => x##posts);
+  result |> Utils.map(_, x => x##posts);
 };
 
 [@react.component]
 let make = () => {
-  let postsSubscription = getPosts();
-  <div className="flex flex-wrap">
-    {switch (postsSubscription) {
+  let posts = postsSubscription();
+  <div>
+    {switch (posts) {
      | Loading => "Loading" |> ste
      | Error(error) =>
        Js.log(error);
@@ -43,14 +43,17 @@ let make = () => {
          "There are no posts"->Utils.ste
        </div>
      | Data(response) =>
+     
        switch (response) {
        | posts =>
          posts
          |> Array.mapi((idx, post) =>
+         <div className="flex flex-wrap">
               <div
                 key={string_of_int(idx)}
                 className="bg-white rounded-t-lg overflow-hidden p-4 p-10 flex justify-center">
                 <Post post />
+              </div>
               </div>
             )
          |> ReasonReact.array

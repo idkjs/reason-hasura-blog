@@ -19,7 +19,6 @@
   "devDependencies": {
     "@baransu/graphql_ppx_re": "0.7.1",
     "bs-platform": "8.0.0-dev.1",
-    "tailwind": "4.0.0",
     "tailwindcss": "1.4.6"
   },
   "scripts": {
