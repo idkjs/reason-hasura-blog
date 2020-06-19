@@ -27,6 +27,7 @@
     "subscriptions-transport-ws": "^0.9.16"
   },
   "devDependencies": {
+    "@baransu/graphql_ppx_re": "0.7.1",
     "@reasonml-community/graphql-ppx": "1.0.0-beta.11",
     "bs-platform": "8.0.0-dev.1",
     "tailwind": "4.0.0",

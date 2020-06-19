@@ -4,11 +4,11 @@ bsc = /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/bs-platfor
 bsdep = /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/bs-platform/darwin/bsb_helper.exe
 warnings = 
 bsc_flags = -bs-super-errors
-ppx_flags = -ppx /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@reasonml-community/graphql-ppx/ppx
+ppx_flags = -ppx /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@baransu/graphql_ppx_re/ppx
 g_dpkg_incls = 
 g_ns = -bs-ns ReasonHasuraDemo
 bsb_dir_group = 0
-g_lib_incls = -I . -I src/components -I src -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-react/lib/ocaml -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo/lib/ocaml -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo-hooks/lib/ocaml -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@glennsl/bs-json/lib/ocaml -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@reasonml-community/graphql-ppx/lib/ocaml
+g_lib_incls = -I . -I src/components -I src -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-react/lib/ocaml -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo/lib/ocaml -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo-hooks/lib/ocaml -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@glennsl/bs-json/lib/ocaml
 rule build_ast_from_re
   command = $bsc  $warnings -color always -bs-jsx 3 $ppx_flags $bsc_flags -o $out -bs-syntax-only -bs-binary-ast $in
   description = [34mBuilding[39m [2m${out}[22m

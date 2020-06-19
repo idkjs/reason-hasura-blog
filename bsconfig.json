@@ -24,9 +24,8 @@
     "reason-react",
     "reason-apollo",
     "reason-apollo-hooks",
-    "@glennsl/bs-json",
-    "@reasonml-community/graphql-ppx"
+    "@glennsl/bs-json"
   ],
-  "ppx-flags": ["@reasonml-community/graphql-ppx/ppx"],
+  "ppx-flags": ["@baransu/graphql_ppx_re/ppx"],
   "refmt": 3
 }

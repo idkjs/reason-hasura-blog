@@ -1,7 +1,7 @@
 ####{BSB GENERATED: NO EDIT
 B lib/bs
 FLG -open ReasonHasuraDemo
-FLG -ppx /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@reasonml-community/graphql-ppx/ppx
+FLG -ppx /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@baransu/graphql_ppx_re/ppx
 FLG -ppx '/Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/bs-platform/darwin/bsc.exe -as-ppx -bs-jsx 3'
 S /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/bs-platform/lib/ocaml
 B /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/bs-platform/lib/ocaml
@@ -14,8 +14,6 @@ S /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo-
 B /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo-hooks/lib/ocaml
 S /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@glennsl/bs-json/lib/ocaml
 B /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@glennsl/bs-json/lib/ocaml
-S /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@reasonml-community/graphql-ppx/lib/ocaml
-B /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@reasonml-community/graphql-ppx/lib/ocaml
 S src
 B lib/bs/src
 S src/components
