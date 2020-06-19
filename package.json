@@ -19,6 +19,7 @@
   "devDependencies": {
     "@baransu/graphql_ppx_re": "0.7.1",
     "@dylanirlbeck/tailwind-ppx": "^0.7.8",
+    "autoprefixer": "^9.8.1",
     "bs-platform": "8.0.0-dev.1",
     "tailwindcss": "1.4.6"
   },
