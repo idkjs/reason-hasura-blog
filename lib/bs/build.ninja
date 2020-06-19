@@ -1,0 +1,64 @@
+g_pkg_flg = -bs-package-name reason-hasura-demo -bs-ns ReasonHasuraDemo
+src_root_dir = /Users/mandalarian/Github/reason-hasura-auth-devto
+bsc = /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/bs-platform/darwin/bsc.exe
+bsdep = /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/bs-platform/darwin/bsb_helper.exe
+warnings = 
+bsc_flags = -bs-super-errors
+ppx_flags = -ppx /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@reasonml-community/graphql-ppx/ppx
+g_dpkg_incls = 
+g_ns = -bs-ns ReasonHasuraDemo
+bsb_dir_group = 0
+g_lib_incls = -I . -I src/components -I src -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-react/lib/ocaml -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo/lib/ocaml -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo-hooks/lib/ocaml -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@glennsl/bs-json/lib/ocaml -I /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/@reasonml-community/graphql-ppx/lib/ocaml
+rule build_ast_from_re
+  command = $bsc  $warnings -color always -bs-jsx 3 $ppx_flags $bsc_flags -o $out -bs-syntax-only -bs-binary-ast $in
+  description = [34mBuilding[39m [2m${out}[22m
+build  src/App.reast : build_ast_from_re $src_root_dir/src/App.re
+rule build_deps
+  command = $bsdep -hash 12992b9088052c9ada8c1145e03f8856 $g_ns -g $bsb_dir_group $in
+  restat = 1
+  description = [34mBuilding[39m [2m${out}[22m
+build  src/App.d : build_deps src/App.reast
+rule ml_cmj_cmi
+  command = $bsc $g_pkg_flg -color always -bs-suffix $g_lib_incls $warnings $bsc_flags -o $out $in
+  dyndep = $in_e.d
+  restat = 1
+  description = [34mBuilding[39m [2m${out}[22m
+build  src/App-ReasonHasuraDemo.cmj |  src/App-ReasonHasuraDemo.cmi $src_root_dir/src/App.bs.js $src_root_dir/lib/js/src/App.bs.js : ml_cmj_cmi src/App.reast ||  src/App.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src -bs-package-output es6:src
+build  src/index.reast : build_ast_from_re $src_root_dir/src/index.re
+build  src/index.d : build_deps src/index.reast
+build  src/index-ReasonHasuraDemo.cmj |  src/index-ReasonHasuraDemo.cmi $src_root_dir/src/index.bs.js $src_root_dir/lib/js/src/index.bs.js : ml_cmj_cmi src/index.reast ||  src/index.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src -bs-package-output es6:src
+build  src/utils.reast : build_ast_from_re $src_root_dir/src/utils.re
+build  src/utils.d : build_deps src/utils.reast
+build  src/utils-ReasonHasuraDemo.cmj |  src/utils-ReasonHasuraDemo.cmi $src_root_dir/src/utils.bs.js $src_root_dir/lib/js/src/utils.bs.js : ml_cmj_cmi src/utils.reast ||  src/utils.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src -bs-package-output es6:src
+build  src/ApolloClient.reast : build_ast_from_re $src_root_dir/src/ApolloClient.re
+build  src/ApolloClient.d : build_deps src/ApolloClient.reast
+build  src/ApolloClient-ReasonHasuraDemo.cmj |  src/ApolloClient-ReasonHasuraDemo.cmi $src_root_dir/src/ApolloClient.bs.js $src_root_dir/lib/js/src/ApolloClient.bs.js : ml_cmj_cmi src/ApolloClient.reast ||  src/ApolloClient.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src -bs-package-output es6:src
+build  src/components/Post.reast : build_ast_from_re $src_root_dir/src/components/Post.re
+build  src/components/Post.d : build_deps src/components/Post.reast
+build  src/components/Post-ReasonHasuraDemo.cmj |  src/components/Post-ReasonHasuraDemo.cmi $src_root_dir/src/components/Post.bs.js $src_root_dir/lib/js/src/components/Post.bs.js : ml_cmj_cmi src/components/Post.reast ||  src/components/Post.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src/components -bs-package-output es6:src/components
+build  src/components/Modal.reast : build_ast_from_re $src_root_dir/src/components/Modal.re
+build  src/components/Modal.d : build_deps src/components/Modal.reast
+build  src/components/Modal-ReasonHasuraDemo.cmj |  src/components/Modal-ReasonHasuraDemo.cmi $src_root_dir/src/components/Modal.bs.js $src_root_dir/lib/js/src/components/Modal.bs.js : ml_cmj_cmi src/components/Modal.reast ||  src/components/Modal.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src/components -bs-package-output es6:src/components
+build  src/components/Header.reast : build_ast_from_re $src_root_dir/src/components/Header.re
+build  src/components/Header.d : build_deps src/components/Header.reast
+build  src/components/Header-ReasonHasuraDemo.cmj |  src/components/Header-ReasonHasuraDemo.cmi $src_root_dir/src/components/Header.bs.js $src_root_dir/lib/js/src/components/Header.bs.js : ml_cmj_cmi src/components/Header.reast ||  src/components/Header.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src/components -bs-package-output es6:src/components
+build  src/components/Counter.reast : build_ast_from_re $src_root_dir/src/components/Counter.re
+build  src/components/Counter.d : build_deps src/components/Counter.reast
+build  src/components/Counter-ReasonHasuraDemo.cmj |  src/components/Counter-ReasonHasuraDemo.cmi $src_root_dir/src/components/Counter.bs.js $src_root_dir/lib/js/src/components/Counter.bs.js : ml_cmj_cmi src/components/Counter.reast ||  src/components/Counter.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src/components -bs-package-output es6:src/components
+build  src/components/PostTypes.reast : build_ast_from_re $src_root_dir/src/components/PostTypes.re
+build  src/components/PostTypes.d : build_deps src/components/PostTypes.reast
+build  src/components/PostTypes-ReasonHasuraDemo.cmj |  src/components/PostTypes-ReasonHasuraDemo.cmi $src_root_dir/src/components/PostTypes.bs.js $src_root_dir/lib/js/src/components/PostTypes.bs.js : ml_cmj_cmi src/components/PostTypes.reast ||  src/components/PostTypes.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:lib/js/src/components -bs-package-output es6:src/components
+rule build_package
+  command = $bsc -w -49 -color always -no-alias-deps  $in
+  restat = 1
+  description = [34mBuilding[39m [2m${out}[22m
+build  ReasonHasuraDemo.cmi : build_package ReasonHasuraDemo.mlmap

@@ -1,0 +1,1 @@
+CREATE TABLE "public"."users"("id" text NOT NULL, "name" text NOT NULL, "avatar_url" text NOT NULL DEFAULT 'https://therminic2018.eu/wp-content/uploads/2018/07/dummy-avatar-300x300.jpg', PRIMARY KEY ("id") , UNIQUE ("id"));
