@@ -8,7 +8,7 @@ module PostMutation = [%graphql
   |}
 ];
 
-module AddPostMutation = ReasonApollo.CreateMutation(PostMutation.definition);
+module AddPostMutation = ReasonApollo.CreateMutation(PostMutation);
 
 [@react.component]
 let make = (~closeModal) => {

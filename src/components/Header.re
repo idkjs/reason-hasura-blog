@@ -1,5 +1,7 @@
-[@bs.val] external require: string => string = "require";
-let logo = require("../imgs/logo.svg");
+// [@bs.val] external require: string => string = "require";
+// let logo = require("../imgs/logo.svg");
+[@bs.module "../imgs/logo.svg"]
+external logo: string = "default";
 
 [@react.component]
 let make = (~openModal, ~isModalOpened) => {

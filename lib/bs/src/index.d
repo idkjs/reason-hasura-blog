@@ -1,1 +1,1 @@
-src/index-ReasonHasuraDemo.cmj : ReasonHasuraDemo.cmi src/ApolloClient-ReasonHasuraDemo.cmj src/ApolloClient-ReasonHasuraDemo.cmi src/App-ReasonHasuraDemo.cmj src/App-ReasonHasuraDemo.cmi
+src/Index-ReasonHasuraDemo.cmj : ReasonHasuraDemo.cmi src/App-ReasonHasuraDemo.cmj src/App-ReasonHasuraDemo.cmi src/Client-ReasonHasuraDemo.cmj src/Client-ReasonHasuraDemo.cmi
