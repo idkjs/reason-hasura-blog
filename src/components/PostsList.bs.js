@@ -9,7 +9,7 @@ import * as Js_option from "bs-platform/lib/es6/js_option.js";
 import * as ApolloHooks from "reason-apollo-hooks/src/ApolloHooks.bs.js";
 import * as Caml_option from "bs-platform/lib/es6/caml_option.js";
 import * as Post$ReasonHasuraDemo from "./Post.bs.js";
-import * as Subs$ReasonHasuraDemo from "../utils/Subs.bs.js";
+import * as Subs$ReasonHasuraDemo from "../client/Subs.bs.js";
 import * as Utils$ReasonHasuraDemo from "../utils/Utils.bs.js";
 
 var ppx_printed_query = "subscription getPosts  {\nposts(order_by: {created_at: desc})  {\ntitle  \ncover_img  \ncontent  \ncreated_at  \nuser  {\nname  \navatar_url  \n}\n\n}\n\n}\n";

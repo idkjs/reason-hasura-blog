@@ -14,6 +14,8 @@ S /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo-
 B /Users/mandalarian/Github/reason-hasura-auth-devto/node_modules/reason-apollo-hooks/lib/ocaml
 S src
 B lib/bs/src
+S src/client
+B lib/bs/src/client
 S src/components
 B lib/bs/src/components
 S src/utils

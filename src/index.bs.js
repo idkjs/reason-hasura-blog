@@ -5,7 +5,7 @@ import * as ReactDOMRe from "reason-react/src/legacy/ReactDOMRe.bs.js";
 import * as ReactApollo from "react-apollo";
 import * as ReactHooks from "@apollo/react-hooks";
 import * as App$ReasonHasuraDemo from "./App.bs.js";
-import * as Client$ReasonHasuraDemo from "./Client.bs.js";
+import * as Client$ReasonHasuraDemo from "./client/Client.bs.js";
 
 import './index.css'
 ;

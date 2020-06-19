@@ -1,1 +1,0 @@
-let ste = ReasonReact.string;
