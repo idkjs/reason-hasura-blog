@@ -171,8 +171,9 @@ function PostsList(Props) {
     console.log(postsSubscription._0);
     tmp = Utils$ReasonHasuraDemo.ste("Error");
   } else {
-    tmp = $$Array.map((function (post) {
+    tmp = $$Array.mapi((function (idx, post) {
             return React.createElement("div", {
+                        key: String(idx),
                         className: "bg-white rounded-t-lg overflow-hidden p-4 p-10 flex justify-center"
                       }, React.createElement(Post$ReasonHasuraDemo.make, {
                             post: post
