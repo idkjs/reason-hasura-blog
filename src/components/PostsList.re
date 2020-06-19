@@ -46,9 +46,9 @@ let make = () => {
        switch (response) {
        | posts =>
          posts
-         |> Array.mapi((idx,post )=>
+         |> Array.mapi((idx, post) =>
               <div
-              key=string_of_int(idx)
+                key={string_of_int(idx)}
                 className="bg-white rounded-t-lg overflow-hidden p-4 p-10 flex justify-center">
                 <Post post />
               </div>
